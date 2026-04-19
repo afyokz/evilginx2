@@ -10,3 +10,5 @@
 #### Before submitting a bug report, please check:
 #### - You are running the latest version
 #### - The issue has not already been reported
+#### - You have checked the existing issues and pull requests
+#### - You have included relevant logs or error output
