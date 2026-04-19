@@ -1,7 +1,7 @@
 TARGET=evilginx
 PACKAGES=core database log parser
 
-.PHONY: all build clean install
+.PHONY: all build clean install uninstall
 all: build
 
 build:
@@ -21,3 +21,6 @@ clean:
 uninstall:
 	@rm -f ~/bin/$(TARGET)
 	@echo "Uninstalled $(TARGET) from ~/bin/$(TARGET)"
+
+# quick rebuild: clean then build, useful during active development
+rebuild: clean build
