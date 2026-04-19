@@ -3,11 +3,7 @@
 
 # 3.3.0
 - Feature: Official GoPhish integration, using the fork: https://github.com/kgretzky/gophish
-- Feature: Added support to load custom TLS certificates from a public certificate file and a private key file stored in `~/.evilginx/crt/sites/<hostname>/`. Will load `fullchain.pem` and `privkey.pem` pair or a combination of a `.pem`/`.crt` (public certificate) and a `.key` (private key) file. Make sure to run off`.
-- Feature: Added ability to inject `force_post`.
-- Feature: Added ability toert <on/off>`.
- will now properly recognize origin IP for requests coming from behind a reverse proxy (nginx/apache2/cloudflare/azure).
-- Fixed: Infinite redirection loop if the lure URL path was the same as the login path defined in the phishlet.
+- Feature: Added support to load custom TLS certificates from a public certificate file and a private key file stored in `~/.evilginx/crt/sites/<hostname>/`. Will load `fullchain.pem` and `privkey.pem` pair or a combination of a `.pem`/`.crt` (public certificate) and a `.key` (private key): Added ability toert <on/ now properly recognize origin IP for requests coming path was the same as the login path defined in the phishlet.
 - Fixed: Added support for exported cookies with names prefixed with `__Host-` and `__Secure-`.
 - Fixed: Global `unauth_url` can now be set to an empty string to have the server return `403` on unauthorized requests.
 - Fixed: Unauthorized redirects and blacklisting would be ignored for `proxy_hosts` with `session: false` (default) making it easy to detect evilginx by external scanners.
@@ -29,4 +25,6 @@
   - Using this for lab/CTF practice only.
   - Tested against my own Azure AD tenant in an isolated environment.
   - Do NOT use against systems you don't own or have explicit permission to test.
+  - Note to self: default blacklist_ip is checked on every request; consider increasing the cache TTL
+    in db.go if running long-duration lab sessions to reduce disk I/O.
 -->
