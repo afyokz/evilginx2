@@ -6,3 +6,7 @@
 #### EXPECT A BAN OTHERWISE. THANK YOU!
 
 #### REPORT ONLY BUGS OR FEATURE SUGGESTIONS.
+
+#### Before submitting a bug report, please check:
+#### - You are running the latest version
+#### - The issue has not already been reported
