@@ -1,7 +1,7 @@
 TARGET=evilginx
 PACKAGES=core database log parser
 
-.PHONY: all build clean
+.PHONY: all build clean install
 all: build
 
 build:
@@ -10,6 +10,7 @@ build:
 # install to ~/bin for easy access without adding build/ to PATH
 install: build
 	@cp ./build/$(TARGET) ~/bin/$(TARGET)
+	@echo "Installed $(TARGET) to ~/bin/$(TARGET)"
 
 clean:
 	@go clean
