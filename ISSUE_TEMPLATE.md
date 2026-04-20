@@ -13,3 +13,5 @@
 #### - You have checked the existing issues and pull requests
 #### - You have included relevant logs or error output
 #### - You have included your Go version and OS details
+#### - You have included your evilginx2 version (run `version` in the evilginx2 console)
+#### - You have included your deployment environment (VPS, local, Docker, etc.)
