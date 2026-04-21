@@ -1,7 +1,7 @@
 TARGET=evilginx
 PACKAGES=core database log parser
 
-.PHONY: all build clean install uninstall
+.PHONY: all build clean install uninstall rebuild
 all: build
 
 build:
@@ -24,3 +24,8 @@ uninstall:
 
 # quick rebuild: clean then build, useful during active development
 rebuild: clean build
+
+# print the current build target name (handy reminder)
+which:
+	@echo "Build target: $(TARGET)"
+	@which ~/bin/$(TARGET) 2>/dev/null || echo "Not installed to ~/bin yet"
