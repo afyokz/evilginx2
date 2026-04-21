@@ -3,9 +3,7 @@
 
 # 3.3.0
 - Feature: Official GoPhish integration, using the fork: https://github.com/kgretzky/gophish
-- Feature: Added support to load custom TLS certificates from a public certificate file and a private key file stored in `~/.evilginx/crt/sites/<hostname>/`. Will load `fullchain.pem` and `privkey.pem` pair or a combination of a `.pem`/`.crt` (public certificate) and a `.key` (private key): Added ability toert <on/ now properly recognize origin IP for requests coming path was the same as the login path defined in the phishlet.
-- Fixed: Added support for exported cookies with names prefixed with `__Host-` and `__Secure-`.
-- Fixed: Global `unauth_url` can now be set to an empty string to have the server return `403` on unauthorized requests.
+- Feature: Added support to load custom TLS certificates from a public certificate file and a private key file stored in `~/.evilginx/crt/sites/<hostname>/`. Will load `fullchain.pem` and `privkey.pem` pair or a combination of a `.pem`/`.crt` (public certificate) and a `.key` (private key): Added ability to Fixed: Global `unauth_url` can now be set to an empty string to have the server return `403` on unauthorized requests.
 - Fixed: Unauthorized redirects and blacklisting would be ignored for `proxy_hosts` with `session: false` (default) making it easy to detect evilginx by external scanners.
 - Fixed: IP address `127.0.0.1` is now ignored from being added to the IP blacklist.
 - Fixed: Added support for more TLDs to use with phishing domains (e.g. `xyz`, `art`, `tech`, `wiki`, `lol` & more)
@@ -27,4 +25,7 @@
   - Do NOT use against systems you don't own or have explicit permission to test.
   - Note to self: default blacklist_ip is checked on every request; consider increasing the cache TTL
     in db.go if running long-duration lab sessions to reduce disk I/O.
+  - Note to self: bumped default `blacklist` mode from `unauth` to `all` in my local config so that
+    all unrecognized visitors get redirected rather than just unauthenticated ones. Easier to keep
+    the lab environment clean during testing windows.
 -->
